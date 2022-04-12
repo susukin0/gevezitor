@@ -1,7 +1,7 @@
 # gevezitor
 gevezitor is a terminal-based text editor that it is light, easy to use and user friendly
 
-![Screenshot](example.png)
+
 
 
 ## INSTALLATION
