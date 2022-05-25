@@ -785,7 +785,7 @@ int main(int argc, char *argv[]) {
   }
 
   editorSetStatusMessage(
-    "HELP: Ctrl-S = save | Ctrl-Q = quit | Ctrl-F = find");
+    "HELP: Ctrl-S = save | Ctrl-Q = quit | Ctrl-F = find | Ctrl-\\ = replace (work in progress)");
 
   while (1) {
     editorRefreshScreen();
