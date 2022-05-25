@@ -1,4 +1,3 @@
-
 #define _DEFAULT_SOURCE
 #define _BSD_SOURCE
 #define _GNU_SOURCE
@@ -57,7 +56,7 @@ struct editorConfig {
   erow *row;
   int dirty;
   char *filename;
-  char statusmsg[80];
+  char statusmsg[92];
   time_t statusmsg_time;
   struct termios orig_termios;
 };
@@ -510,7 +509,7 @@ void editorDrawRows(struct abuf *ab) {
     int filerow = y + E.rowoff;
     if (filerow >= E.numrows) {
       if (E.numrows == 0 && y == E.screenrows / 3) {
-        char welcome[80];
+        char welcome[92];
         int welcomelen = snprintf(welcome, sizeof(welcome),
           "Gevezitor %s", GEVEZITOR_VERSION);
         if (welcomelen > E.screencols) welcomelen = E.screencols;
@@ -538,7 +537,7 @@ void editorDrawRows(struct abuf *ab) {
 
 void editorDrawStatusBar(struct abuf *ab) {
   abAppend(ab, "\x1b[7m", 4);
-  char status[80], rstatus[80];
+  char status[92], rstatus[92];
   int len = snprintf(status, sizeof(status), "%.20s - %d lines %s",
     E.filename ? E.filename : "[No Name]", E.numrows,
     E.dirty ? "(modified)" : "");
